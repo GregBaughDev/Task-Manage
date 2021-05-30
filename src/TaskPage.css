@@ -1,0 +1,68 @@
+header {
+    height: 100px;
+    background-color: #FDDEA4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+header div {
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    font-family: Hauora;
+    color: #2C436D;
+    font-weight: 700;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #DAEDDE;
+}
+
+.head-logo {
+    width: 381px;
+    height: auto;
+}
+
+#outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 42px;
+}
+
+.card-holder {
+    width: 90%;
+    border: 3px solid #2C436D;
+    border-radius: 20px;
+}
+
+.holder-header {
+    background-color: #DAEDDE;
+    border-bottom: 3px solid #2C436D;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.holder-main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.head-item {
+    width: 20%;
+    text-align: center;
+}
+
+.holder-col {
+    width: 20%;
+    margin-top: 2%;
+}

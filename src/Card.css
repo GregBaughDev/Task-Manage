@@ -1,0 +1,19 @@
+.card {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    border: 3px solid #2C436D;
+    background-color: #F8CCC5;
+    border-radius: 25px;
+    margin-bottom: 5%;
+}
+
+.card h5, h4, p {
+    margin: 5%;
+}
+
+hr {
+    color: #2C436D;
+    border-width: 2px;
+    border-style: solid;
+}

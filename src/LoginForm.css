@@ -1,0 +1,70 @@
+.logFormHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.logForm {
+    border: #2C436D solid 3px;
+    border-radius: 25px;
+    width: 567px;
+    height: 425px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logForm h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: Hauora;
+    font-weight: 700;
+    font-size: 20px;
+    color: #2C436D;
+}
+
+input {
+    width: 60%;
+    border: #FDDEA4 solid 5px;
+    border-radius: 20px;
+    height: 40px;
+    text-align: center;
+    color: #2C436D;
+    font-family: Hauora;
+    font-size: 16px;
+}
+
+input::placeholder {
+    font-weight: 500;
+    color: #2C436D;
+    font-family: Hauora;
+    height: 100%;
+}
+
+.formItem {
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logForm button {
+    font-family: Hauora;
+    font-weight: 700;
+    font-size: 20px;
+    color: #2C436D;
+    width: 289px;
+    background-color: #DAEDDE;
+    border: none;
+    height: 54px;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+.logForm button:last-of-type {
+    margin-top: 2%;
+}

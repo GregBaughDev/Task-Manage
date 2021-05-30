@@ -2,6 +2,9 @@
     width: auto;
     height: 214px;
     background-color: #FDDEA4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .head-logo {

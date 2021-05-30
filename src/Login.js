@@ -6,7 +6,7 @@ function Login(){
     return(
         <div>
             <div className="head-banner">
-                <img className="head-logo" src={logo}></img>
+                <img className="head-logo" alt="Task Manage logo" src={logo}></img>
             </div>
         </div>
     )
