@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
-import logo from './img/TMlogo.png'
+import React, {useState} from 'react';
+import {DndContext} from '@dnd-kit/core';
+import logo from './img/TMlogo.png';
 import Card from './Card';
-import './TaskPage.css'
+import './TaskPage.css';
 
 function TaskPage(){
+    const [ref, setRef] = useState(React.createRef());
     return(
         <>
         <header>
@@ -30,23 +32,31 @@ function TaskPage(){
                         <h3>Complete</h3>
                     </div> 
                 </div>
-                <div className="holder-main">
-                    <div className="holder-col">
-                        <Card />
+                <DndContext>
+                    <div className="holder-main">
+                        <div ref={ref} id={1} className="holder-col">
+                            <div draggable className="card">
+                                <h4>First Task</h4>
+                                <hr></hr>
+                                <h5>30.05.21 / 12:45</h5>
+                                <p>Greg</p>
+                            </div>
+                        </div>
+                        <div className="holder-col">
+                            
+                        </div>
+                        <div className="holder-col">
+                            
+                        </div>
+                        <div className="holder-col">
+                            
+                        </div>
                     </div>
-                    <div className="holder-col">
-                    </div>
-                    <div className="holder-col">
-                    </div>
-                    <div className="holder-col">
-                    </div>
-                </div>
+                </DndContext>
             </div>
         </div>
         </>
     )
 }
-
-
 
 export default TaskPage;
