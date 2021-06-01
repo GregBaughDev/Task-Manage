@@ -1,11 +1,16 @@
 import React, {useState} from 'react';
 import {DndContext} from '@dnd-kit/core';
-import logo from './img/TMlogo.png';
+import CardHolder from './CardHolder';
 import Card from './Card';
+import logo from './img/TMlogo.png';
 import './TaskPage.css';
 
 function TaskPage(){
-    const [ref, setRef] = useState(React.createRef());
+    const containers = ['A', 'B', 'C', 'D'];
+    const [parent, setParent] = useState(null);
+    const draggableMarkup = (
+        <Card></Card>
+    )
     return(
         <>
         <header>
@@ -32,31 +37,26 @@ function TaskPage(){
                         <h3>Complete</h3>
                     </div> 
                 </div>
-                <DndContext>
-                    <div className="holder-main">
-                        <div ref={ref} id={1} className="holder-col">
-                            <div draggable className="card">
-                                <h4>First Task</h4>
-                                <hr></hr>
-                                <h5>30.05.21 / 12:45</h5>
-                                <p>Greg</p>
-                            </div>
-                        </div>
-                        <div className="holder-col">
-                            
-                        </div>
-                        <div className="holder-col">
-                            
-                        </div>
-                        <div className="holder-col">
-                            
-                        </div>
-                    </div>
-                </DndContext>
+                <div className="holder-main">
+                    <DndContext onDragEnd={handleDragEnd}>
+                        {parent === null ? draggableMarkup : null}
+                        {containers.map((id) => (
+                            <CardHolder key={id} id={id}>
+                                <Card id="draggable" />
+                                {parent === id ? draggableMarkup : 'Drop here'}
+                            </CardHolder>
+                        ))}
+                    </DndContext>
+                </div>
             </div>
         </div>
         </>
-    )
+    );
+    
+    function handleDragEnd(event){
+        const {over} = event;
+        setParent(over ? over.id : null);
+    }
 }
 
 export default TaskPage;

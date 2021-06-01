@@ -1,13 +1,19 @@
 import React from 'react'
+import {useDraggable} from '@dnd-kit/core';
 import './Card.css'
 
-function Card(){
+function Card(props){
+    const {attributes, listeners, setNodeRef, transform} = useDraggable({
+        id: props.id,
+    });
+
     return(
-        <div draggable className="card">
+        <div ref={setNodeRef} {...listeners} {...attributes} className="card">
             <h4>First Task</h4>
             <hr></hr>
             <h5>30.05.21 / 12:45</h5>
             <p>Greg</p>
+            {props.children}
         </div>
     )
 }
