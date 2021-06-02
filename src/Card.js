@@ -3,7 +3,7 @@ import './Card.css'
 
 function Card(){
     return(
-        <div className="card">
+        <div draggable className="card">
             <h4>First Task</h4>
             <hr></hr>
             <h5>30.05.21 / 12:45</h5>

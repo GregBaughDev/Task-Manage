@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import CardHolder from './CardHolder';
-import Card from './Card';
 import logo from './img/TMlogo.png';
 import './TaskPage.css';
 
@@ -30,14 +29,6 @@ function TaskPage(){
                     <div className="head-item">
                         <h3>Complete</h3>
                     </div> 
-                </div>
-                <div className="holder-main">
-                    <CardHolder>
-                        <Card />
-                    </CardHolder>
-                    <CardHolder></CardHolder>
-                    <CardHolder></CardHolder>
-                    <CardHolder></CardHolder>
                 </div>
             </div>
         </div>
