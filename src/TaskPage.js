@@ -30,6 +30,12 @@ function TaskPage(){
                         <h3>Complete</h3>
                     </div> 
                 </div>
+                <div className="holder-main">
+                    <CardHolder />
+                    <CardHolder />
+                    <CardHolder />
+                    <CardHolder />
+                </div>
             </div>
         </div>
         </>
