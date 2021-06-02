@@ -1,16 +1,10 @@
 import React, {useState} from 'react';
-import {DndContext} from '@dnd-kit/core';
 import CardHolder from './CardHolder';
 import Card from './Card';
 import logo from './img/TMlogo.png';
 import './TaskPage.css';
 
 function TaskPage(){
-    const containers = ['A', 'B', 'C', 'D'];
-    const [parent, setParent] = useState(null);
-    const draggableMarkup = (
-        <Card></Card>
-    )
     return(
         <>
         <header>
@@ -38,25 +32,19 @@ function TaskPage(){
                     </div> 
                 </div>
                 <div className="holder-main">
-                    <DndContext onDragEnd={handleDragEnd}>
-                        {parent === null ? draggableMarkup : null}
-                        {containers.map((id) => (
-                            <CardHolder key={id} id={id}>
-                                <Card id="draggable" />
-                                {parent === id ? draggableMarkup : 'Drop here'}
-                            </CardHolder>
-                        ))}
-                    </DndContext>
+                    <CardHolder>
+                        <Card />
+                    </CardHolder>
+                    <CardHolder></CardHolder>
+                    <CardHolder></CardHolder>
+                    <CardHolder></CardHolder>
                 </div>
             </div>
         </div>
         </>
     );
     
-    function handleDragEnd(event){
-        const {over} = event;
-        setParent(over ? over.id : null);
-    }
+
 }
 
 export default TaskPage;
