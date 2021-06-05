@@ -1,9 +1,9 @@
 const initialData = {
     tasks: {
-        'task-1': {id: 'task-1', content: 'First task', datetime: '30.05.21 / 12:45', user: 'Greg'},
-        'task-2': {id: 'task-2', content: 'Second task', datetime: '30.05.21 / 12:45', user: 'Greg'},
-        'task-3': {id: 'task-3', content: 'Third task', datetime: '30.05.21 / 12:45', user: 'Greg'},
-        'task-4': {id: 'task-4', content: 'Forth task', datetime: '30.05.21 / 12:45', user: 'Greg'},
+        'task-1': {id: 'task-1', title: 'First task', datetime: '30.05.21 / 12:45', user: 'Greg'},
+        'task-2': {id: 'task-2', title: 'Second task', datetime: '30.05.21 / 12:45', user: 'Greg'},
+        'task-3': {id: 'task-3', title: 'Third task', datetime: '30.05.21 / 12:45', user: 'Greg'},
+        'task-4': {id: 'task-4', title: 'Forth task', datetime: '30.05.21 / 12:45', user: 'Greg'},
     },
     columns: {
         'column-1': {

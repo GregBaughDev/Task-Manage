@@ -1,15 +1,28 @@
-import React from 'react'
-import './Card.css'
+import React, {Component} from 'react';
+import {Draggable} from 'react-beautiful-dnd';
+import './Card.css';
 
-function Card(){
-    return(
-        <div draggable className="card">
-            <h4>First Task</h4>
-            <hr></hr>
-            <h5>30.05.21 / 12:45</h5>
-            <p>Greg</p>
-        </div>
-    )
+class Card extends Component{
+    render(){
+        return(
+            <>
+            {(provided, snapshot) => (
+                <Draggable className="card"
+                draggableId={this.props.task.id}
+                index={this.props.index}
+                {...provided.draggableProps}
+                {...provided.dragHangleProps}
+                ref={provided.innerRef}
+                isDragging={snapshot.isDragging}>
+                    <h4>{this.props.task.title}</h4>
+                    <hr></hr>
+                    <h5>{this.props.task.datetime}</h5>
+                    <p>{this.props.task.user}</p>
+            </Draggable>
+            )}
+            </>
+        )
+    }
 }
 
 export default Card;
