@@ -44,7 +44,7 @@ class TaskPage extends Component {
         return;
     }
     //Moving card to another column
-        const startTaskIds = Array.from(finish.taskIds);
+        const startTaskIds = Array.from(start.taskIds);
         startTaskIds.splice(source.index, 1);
         const newStart = {
             ...start,
@@ -94,18 +94,18 @@ class TaskPage extends Component {
                             <h3>Complete</h3>
                         </div> 
                     </div>
-                    <div className="holder-main">
-                        <DragDropContext onDragEnd={this.onDragEnd}>
-                            <div>
-                                {this.state.columnOrder.map(columnId => {
-                                    const column = this.state.columns[columnId];
-                                    const tasks = column.taskIds.map(taskId => 
-                                        this.state.tasks[taskId])
-                                        return <CardHolder key={column.id} column={column} tasks={tasks} />;
-                                })}
-                            </div>
-                        </DragDropContext>
-                    </div>
+                    <DragDropContext onDragEnd={this.onDragEnd}>
+                        <div className="holder-main">
+                                <>
+                                    {this.state.columnOrder.map(columnId => {
+                                        const column = this.state.columns[columnId];
+                                        const tasks = column.taskIds.map(taskId => 
+                                            this.state.tasks[taskId])
+                                            return <CardHolder key={column.id} column={column} tasks={tasks} />;
+                                    })}
+                                </>
+                        </div>
+                    </DragDropContext>
                 </div>
             </div>
             </>
