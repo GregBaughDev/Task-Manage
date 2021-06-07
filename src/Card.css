@@ -17,3 +17,46 @@ hr {
     border-width: 2px;
     border-style: solid;
 }
+
+.card h4:hover {
+    font-weight: 600;
+}
+
+/* Task description in the card, in card view the text is hidden */
+.task-description {
+    display: none;
+}
+
+.task-display {
+    display: block;
+    text-align: left;
+}
+
+.modal-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-card-content {
+    background-color: #F8CCC5;
+    border: 3px solid #2C436D;
+    border-radius: 30px;
+    text-align: center;
+    width: 60%;
+    height: auto;
+    pointer-events: none;
+    overflow-y: hidden;
+}
+
+.no-modal {
+    width: 80%;
+}
