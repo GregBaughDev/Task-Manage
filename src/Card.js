@@ -10,21 +10,29 @@ class Card extends Component{
         }
     }
 
-    onClick = () => {
-        if(!this.state.isClicked){
-            this.setState(prevState => {
-                return {
-                    isClicked: !prevState.true,
-                }
-            })
-            document.body.style.overflow = "hidden";
+    onClick = (e) => {
+        if(e.target.nodeName == "H4" || e.target.innerText == "Close"){
+            this.toggleModal();
         }
+        if(e.target.innerText == "Delete" && e.target.nodeName == "BUTTON"){
+            e.target.parentNode.remove();
+            this.toggleModal();
+        }
+    };
+
+    toggleModal = () => {
+        this.setState(prevState => {
+            return {
+                isClicked: !prevState.isClicked,
+            }
+        })
     }
 
     render(){
         const cardClass = this.state.isClicked ? "modal-card-content" : "card";
         const divClass = this.state.isClicked ? "modal-card" : "no-modal";
-        const descClass = this.state.isClicked ? "task-display" : "task-description";
+        const descClass = this.state.isClicked ? "task-display" : "no-display";
+        const buttonClass = this.state.isClicked ? "modal-button" : "no-display";
         return(
             <Draggable draggableId={this.props.task.id}
                 index={this.props.index}>
@@ -40,6 +48,8 @@ class Card extends Component{
                                 <h5>Date and time created: <br/>{this.props.task.datetime}</h5>
                                 <p class={descClass}>{this.props.task.description}</p>
                                 <p>User: {this.props.task.user}</p>
+                                <button onClick={this.onClick} className={buttonClass}>Close</button>
+                                <button onClick={this.onClick} className={buttonClass}>Delete</button>
                             </div>
                         </div>
                     )}
