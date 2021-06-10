@@ -15,7 +15,7 @@ class Card extends Component{
             this.toggleModal();
         }
         if(e.target.innerText == "Delete" && e.target.nodeName == "BUTTON"){
-            e.target.parentNode.remove();
+            e.target.parentNode.parentNode.remove();
             this.toggleModal();
         }
     };
@@ -48,8 +48,10 @@ class Card extends Component{
                                 <h5>Date and time created: <br/>{this.props.task.datetime}</h5>
                                 <p class={descClass}>{this.props.task.description}</p>
                                 <p>User: {this.props.task.user}</p>
-                                <button onClick={this.onClick} className={buttonClass}>Close</button>
-                                <button onClick={this.onClick} className={buttonClass}>Delete</button>
+                                <div className="button-div">
+                                    <button onClick={this.onClick} className={buttonClass}>Close</button>
+                                    <button onClick={this.onClick} className={buttonClass}>Delete</button>
+                                </div>
                             </div>
                         </div>
                     )}

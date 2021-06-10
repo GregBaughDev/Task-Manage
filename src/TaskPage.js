@@ -8,6 +8,10 @@ import './TaskPage.css';
 class TaskPage extends Component {
     state = initialData;
 
+    onClick = (e) => {
+        console.dir(e.target);
+    }
+
     onDragEnd = result => {
         const {destination, source, draggableId} = result;
 
@@ -74,7 +78,7 @@ class TaskPage extends Component {
                 <img className="head-logo" alt="Task Manage logo" src={logo}></img>
                 <h2>Tasks</h2>
                 <div>
-                    <button>New Task</button>
+                    <button onClick={this.onClick}>New Task</button>
                     <button>Log Out</button>
                 </div>
             </header>
