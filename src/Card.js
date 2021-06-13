@@ -11,10 +11,10 @@ class Card extends Component{
     }
 
     onClick = (e) => {
-        if(e.target.nodeName == "H4" || e.target.innerText == "Close"){
+        if(e.target.nodeName === "H4" || e.target.innerText === "Close"){
             this.toggleModal();
         }
-        if(e.target.innerText == "Delete" && e.target.nodeName == "BUTTON"){
+        if(e.target.innerText === "Delete" && e.target.nodeName === "BUTTON"){
             e.target.parentNode.parentNode.remove();
             this.toggleModal();
         }

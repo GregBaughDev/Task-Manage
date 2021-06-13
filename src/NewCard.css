@@ -1,0 +1,59 @@
+.new-card-form {
+    padding: 5%;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%;
+}
+
+.new-card-form input, .new-card-content textarea {
+    width: 80%;
+    resize: none;
+}
+
+.new-card-content button:first-child {
+    align-self: flex-end;
+}
+
+.no-display {
+    display: none;
+}
+
+.new-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44,67,109,0.7);
+}
+
+.new-card-content {
+    background-color: #F8CCC5;
+    border: 3px solid #2C436D;
+    border-radius: 30px;
+    text-align: center;
+    width: 60%;
+    height: 60%;
+    overflow-y: hidden;
+}
+
+.new-card-content h4 {
+    font-size: 3em;
+}
+
+.new-card-content button {
+    position: relative;
+    top: -25px;
+    pointer-events: all;
+    border: 2%;
+}
+
+.no-modal {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}

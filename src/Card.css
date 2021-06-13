@@ -67,6 +67,10 @@ hr {
     border: 2%;
 }
 
+.modal-card-content form {
+    pointer-events: all;
+}
+
 .no-modal {
     width: 80%;
     display: flex;

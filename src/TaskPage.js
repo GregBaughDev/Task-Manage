@@ -2,14 +2,26 @@ import React, {Component} from 'react';
 import initialData from './initial-data';
 import {DragDropContext} from 'react-beautiful-dnd';
 import CardHolder from './CardHolder';
+import NewCard from './NewCard';
 import logo from './img/TMlogo.png';
 import './TaskPage.css';
+import './NewCard.css';
 
 class TaskPage extends Component {
     state = initialData;
 
     onClick = (e) => {
-        console.dir(e.target);
+        if(e.target.innerText === "New Task"){
+            this.newTask();
+        }
+    }
+
+    newTask = () => {
+        this.setState((prevState) => {
+            return {
+                newCard: !prevState.newCard,
+            }
+        })
     }
 
     onDragEnd = result => {
@@ -110,6 +122,9 @@ class TaskPage extends Component {
                                 </>
                         </div>
                     </DragDropContext>
+                </div>
+                <div className={this.state.newCard ? "modal-card" : "no-display"}>
+                    <NewCard />
                 </div>
             </div>
             </>
