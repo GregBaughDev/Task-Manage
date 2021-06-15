@@ -5,7 +5,7 @@ import CardHolder from './CardHolder';
 import NewCard from './NewCard';
 import logo from './img/TMlogo.png';
 import './TaskPage.css';
-import './NewCard.css';
+// import './NewCard.css';
 
 class TaskPage extends Component {
     state = initialData;
