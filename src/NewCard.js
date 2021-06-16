@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormik, useFormikContext } from 'formik';
+import { useFormik} from 'formik';
 import './NewCard.css';
 
 function NewCard(){
@@ -14,17 +14,19 @@ function NewCard(){
             alert(JSON.stringify(values, null, 2))
         },
     })
-//Sort resetting the form if it's cancelled out!
+    //Click handler
     const onClick = (e) => {
-        console.log('being clicked')
-        e.target.offsetParent.className = "no-display";
-        console.log(formik.values)
-        formik.values = {
-            title: "",
-            date: null,
-            user: "",
-            description: "",
+        if(e.target.innerText === "Cancel"){
+            cancelForm(e);
         }
+        if(e.target.innerText === "Submit"){
+            formik.submitForm();
+        }
+    }
+    //Reset the form if 'cancel' is clicked on new form
+    const cancelForm = (e) => {
+        formik.resetForm();
+        e.target.offsetParent.className = "no-display";
     }
 
         return(
@@ -65,7 +67,7 @@ function NewCard(){
                                         />
                                 <div className="form-buttons"> 
                                     <button type="submit">Submit</button>
-                                    <button type="button" onClick={onClick}>Cancel</button>
+                                    <button type="reset" onClick={onClick}>Cancel</button>
                                 </div>
                         </form>
                 </div>

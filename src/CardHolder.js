@@ -6,20 +6,20 @@ class CardHolder extends Component{
     render(){
         return(
             <>
-                <Droppable droppableId={this.props.column.id}>
-                    {(provided, snapshot) => (
-                        <div className="holder-col"
-                            ref={provided.innerRef}
-                            {...provided.droppableProps}
-                            isDraggingOver={snapshot.isDraggingOver}>
-                        {this.props.tasks.map((task, index) => 
-                        <Card key={task.id}
-                            task={task}
-                            index={index} />)}
-                        {provided.placeholder}
-                        </div>
-                    )}
-                </Droppable>
+            <Droppable droppableId={this.props.column.id}>
+                {(provided, snapshot) => (
+                    <div className="holder-col"
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        isDraggingOver={snapshot.isDraggingOver}>
+                    {this.props.tasks.map((task, index) => 
+                    <Card key={task.id}
+                        task={task}
+                        index={index} />)}
+                    {provided.placeholder}
+                    </div>
+                )}
+            </Droppable>
             </>
         )
     }
