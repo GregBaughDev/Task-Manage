@@ -22,8 +22,8 @@ function LoginForm(){
         },
         validate,
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2))
-        },
+            values.username === 'user' && values.password === 'user' ? console.log('correct') : console.log('incorrect')
+        }
     });
 
     const userValidation = formik.errors.username;
@@ -59,10 +59,11 @@ function LoginForm(){
                                     />
                         </div>
                     <button type="submit">Submit</button>
-                    <button type="submit">New User</button>
+                    {/* <button type="submit">New User</button> */}
                 </form>
             </div>
         </div>
+        
     )
 }
 

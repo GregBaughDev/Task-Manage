@@ -1,12 +1,12 @@
 import React from 'react';
-import Login from './Login';
+import LoginForm from './LoginForm';
 import './App.css';
 import TaskPage from './TaskPage';
 
 function App() {
   return (
-    <Login />
-    // <TaskPage />
+    // <LoginForm />
+    <TaskPage />
   );
 }
 

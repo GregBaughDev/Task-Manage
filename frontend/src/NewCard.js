@@ -22,6 +22,7 @@ function NewCard(){
         if(e.target.innerText === "Submit"){
             formik.submitForm();
         }
+        
     }
     //Reset the form if 'cancel' is clicked on new form
     const cancelForm = (e) => {
